@@ -60,7 +60,7 @@ const isCart = location.pathname ==="/dashboard/cart";
   );
 
   return (
-    <div className={`md:m-4 ${isHomePage ? "bg-purple-500  rounded-t-xl" : "bg-white"}`}>
+    <div className={`md:mt-4 md:mx-4 ${isHomePage ? "bg-purple-500  md:rounded-t-xl" : "bg-white"}`}>
       <div className="navbar  container mx-auto">
       <div className="navbar-start">
         <div className="dropdown">

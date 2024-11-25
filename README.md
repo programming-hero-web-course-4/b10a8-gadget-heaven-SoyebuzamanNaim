@@ -1,6 +1,6 @@
 # GadgetHaven - E-Commerce Platform
 
-GadgetHaven is an intuitive and feature-rich e-commerce platform designed for gadget enthusiasts. The platform brings a seamless shopping experience with its well-structured navigation, robust functionalities, and attention to user-centric design.
+✨GadgetHaven is an intuitive and feature-rich e-commerce platform designed for gadget enthusiasts. The platform brings a seamless shopping experience with its well-structured navigation, robust functionalities, and attention to user-centric design.
 
 ---
 

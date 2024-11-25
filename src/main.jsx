@@ -12,6 +12,7 @@ import Dashboard from './assets/components/Dashboard/Dashboard';
 import Statistics from './assets/components/Statistics/Statistics';
 import Wishlist from './assets/components/Wishlist/Wishlist';
 import Cart from './assets/components/Cart/Cart';
+import HomePage from './assets/components/HomePage/HomePage';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     errorElement:<ErrorPage></ErrorPage>,
     children: [
+      {
+        path: '/',
+        element: <HomePage></HomePage>
+
+      },
       
       {
         path: 'dashboard',
