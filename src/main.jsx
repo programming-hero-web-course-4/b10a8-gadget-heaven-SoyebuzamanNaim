@@ -10,6 +10,8 @@ import Root from './assets/components/Root/Root';
 import ErrorPage from './assets/components/ErrorPage/ErrorPage';
 import Dashboard from './assets/components/Dashboard/Dashboard';
 import Statistics from './assets/components/Statistics/Statistics';
+import Wishlist from './assets/components/Wishlist/Wishlist';
+import Cart from './assets/components/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -17,13 +19,26 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     errorElement:<ErrorPage></ErrorPage>,
     children: [
-      {
-        path: '/',
-
-      },
+      
       {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
+        
+        children:[
+          {
+            index: true,
+            element:<Cart></Cart>
+          },
+          {
+            path: 'wishlist',
+            element: <Wishlist></Wishlist>
+          },
+          {
+            path: 'cart',
+            element: <Cart></Cart>
+          },
+          
+        ]
 
       },
       {
