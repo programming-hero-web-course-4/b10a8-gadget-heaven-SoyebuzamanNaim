@@ -3,7 +3,7 @@ import Banner from "../Banner/Banner";
 const HomePage = () => {
   return (
     <div>
-     <div className="md:mb-52 lg:mb-80 mb-52 ">
+     <div className="mb-60 md:mb-80 lg:mb-[28rem]">
      <Banner></Banner>
      </div>
     </div>
