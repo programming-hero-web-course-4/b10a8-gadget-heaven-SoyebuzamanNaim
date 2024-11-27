@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto text-center">
         <h2 className="text-black text-2xl font-bold mb-4">Gadget Heaven</h2>
         <p className="text-gray-500 pb-5 border-b border-gray-400">
-        Leading the way in cutting-edge technology and innovation.
+          Leading the way in cutting-edge technology and innovation.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">

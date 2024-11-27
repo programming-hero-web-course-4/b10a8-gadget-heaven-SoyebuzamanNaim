@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
+
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,12 +15,16 @@ import Statistics from './assets/components/Statistics/Statistics';
 import Wishlist from './assets/components/Wishlist/Wishlist';
 import Cart from './assets/components/Cart/Cart';
 import HomePage from './assets/components/HomePage/HomePage';
+import { GadgetProvider } from './assets/contexts/GadgetProvider';
+
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
     errorElement:<ErrorPage></ErrorPage>,
+    
     children: [
       {
         path: '/',
@@ -60,6 +66,8 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <GadgetProvider>
     <RouterProvider router={router} />
+    </GadgetProvider>
   </StrictMode>,
 )

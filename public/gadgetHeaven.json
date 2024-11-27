@@ -1,0 +1,154 @@
+[
+  {
+    "product_id": "L001",
+    "product_title": "Dell XPS 13",
+    "product_image": "https://i.ibb.co.com/7YLzMpv/image.png",
+    "category": "Laptops",
+    "price": 999,
+    "description": "Sleek and powerful laptop with a stunning display.",
+    "specification": [
+      "13.3-inch FHD display",
+      "Intel Core i7",
+      "16GB RAM",
+      "512GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "L002",
+    "product_title": "MacBook Air M2",
+    "product_image": "https://i.ibb.co.com/FWMgpjw/image.png",
+    "category": "Laptops",
+    "price": 1199,
+    "description": "Lightweight laptop with Apple's M2 chip.",
+    "specification": [
+      "13.6-inch Retina display",
+      "M2 chip",
+      "8GB RAM",
+      "256GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "L003",
+    "product_title": "HP Spectre x360",
+    "product_image": "https://i.ibb.co.com/J3g7Dv5/image.png",
+    "category": "Laptops",
+    "price": 1099,
+    "description": "A premium convertible laptop.",
+    "specification": [
+      "13.5-inch OLED display",
+      "Intel Core i5",
+      "8GB RAM",
+      "512GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "L004",
+    "product_title": "Lenovo ThinkPad X1 Carbon",
+    "product_image": "https://i.ibb.co.com/jLMJm3h/image.png",
+    "category": "Laptops",
+    "price": 1299,
+    "description": "Business laptop with outstanding performance.",
+    "specification": [
+      "14-inch FHD display",
+      "Intel Core i7",
+      "16GB RAM",
+      "1TB SSD"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "L005",
+    "product_title": "Asus ZenBook 14",
+    "product_image": "https://i.ibb.co.com/yfQTz21/image.png",
+    "category": "Laptops",
+    "price": 899,
+    "description": "Compact and lightweight laptop.",
+    "specification": [
+      "14-inch FHD display",
+      "Intel Core i5",
+      "8GB RAM",
+      "512GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "L006",
+    "product_title": "Acer Swift 3",
+    "product_image": "https://i.ibb.co.com/R6nvW6Z/image.png",
+    "category": "Laptops",
+    "price": 799,
+    "description": "Affordable laptop with great performance.",
+    "specification": [
+      "14-inch FHD display",
+      "Intel Core i5",
+      "8GB RAM",
+      "256GB SSD"
+    ],
+    "availability": true,
+    "rating": 4.4
+  },
+  {
+    "product_id": "P001",
+    "product_title": "iPhone 13",
+    "product_image": "https://i.ibb.co.com/HxKct0w/image.png",
+    "category": "Phones",
+    "price": 699,
+    "description": "Apple's smartphone with A15 Bionic chip.",
+    "specification": [
+      "6.1-inch OLED display",
+      "A15 Bionic chip",
+      "128GB storage"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P002",
+    "product_title": "Samsung Galaxy S22",
+    "product_image": "https://i.ibb.co.com/vPMf68G/image.png",
+    "category": "Phones",
+    "price": 799,
+    "description": "Samsung's flagship phone with a great camera.",
+    "specification": [
+      "6.2-inch AMOLED display",
+      "Snapdragon 8 Gen 1",
+      "128GB storage"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "W001",
+    "product_title": "Apple Watch Series 7",
+    "product_image": "https://i.ibb.co.com/gW5q5MG/image.png",
+    "category": "Smartwatches",
+    "price": 399,
+    "description": "Track your health with advanced sensors.",
+    "specification": [
+      "1.9-inch Retina display",
+      "ECG app",
+      "Blood oxygen sensor"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "W002",
+    "product_title": "Samsung Galaxy Watch 4",
+    "product_image": "https://i.ibb.co.com/bJnQ1RY/image.png",
+    "category": "Smartwatches",
+    "price": 299,
+    "description": "Smartwatch with Wear OS and fitness tracking.",
+    "specification": ["1.4-inch AMOLED display", "Heart rate monitor", "GPS"],
+    "availability": true,
+    "rating": 4.6
+  }
+]
