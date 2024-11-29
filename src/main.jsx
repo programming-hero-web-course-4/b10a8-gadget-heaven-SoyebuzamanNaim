@@ -16,6 +16,7 @@ import Wishlist from './assets/components/Wishlist/Wishlist';
 import Cart from './assets/components/Cart/Cart';
 import HomePage from './assets/components/HomePage/HomePage';
 import { GadgetProvider } from './assets/contexts/GadgetProvider';
+import Details from './assets/components/Details/Details';
 
 
 
@@ -28,8 +29,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <HomePage></HomePage>
+        element: <HomePage></HomePage>,
+        
 
+      },
+      {
+        path: 'products/:id',
+        element: <Details></Details>,
       },
       
       {

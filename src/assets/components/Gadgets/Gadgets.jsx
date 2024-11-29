@@ -23,7 +23,7 @@ const Gadgets = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center">
-        <span class="loading loading-spinner loading-lg "></span>
+        <span className="loading loading-spinner loading-lg "></span>
       </div>
     );
   }
@@ -40,7 +40,7 @@ const Gadgets = () => {
 
   return (
     <div>
-      <p className="text-3xl font-extrabold text-center pb-10">Explore Cutting-Edge Gadgets</p>
+      <p className="text-3xl md:text-4xl font-extrabold text-center pb-10 md:pb-20">Explore Cutting-Edge Gadgets</p>
       <div className="flex gap-6">
         <Sidebar
           categories={categories}
