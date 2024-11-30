@@ -1,7 +1,7 @@
 # Gadget Heaven
 
 **Live Website:** [Gadget Heaven](https://gadget-heaven-soyebuzamannaim.surge.sh)  
-**Requirement Document:** [Download PDF](./Batch-10_Assignment-08.pdf)
+**Requirement Document:** [Download PDF](/public/Batch-10_Assignment-08.pdf)
 
 ---
 

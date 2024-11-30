@@ -9,7 +9,7 @@ const Footer = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
           <nav>
-            <h6 className="footer-title text-black font-extrabold mb-4">
+            <h6 className=" text-black font-extrabold mb-4">
               Services
             </h6>
             <ul className="space-y-2">
@@ -31,7 +31,7 @@ const Footer = () => {
           </nav>
 
           <nav>
-            <h6 className="footer-title text-black font-extrabold mb-4">
+            <h6 className=" text-black font-extrabold mb-4">
               Company
             </h6>
             <ul className="space-y-2">
@@ -48,7 +48,7 @@ const Footer = () => {
           </nav>
 
           <nav>
-            <h6 className="footer-title text-black font-extrabold mb-4">
+            <h6 className=" text-black font-extrabold mb-4">
               Legal
             </h6>
             <ul className="space-y-2">
