@@ -57,6 +57,22 @@ const NavBar = () => {
         </NavLink>
       </li>
       
+      <li>
+        <NavLink
+          to="account"
+          className={({ isActive }) =>
+           `text-lg text-center  ${
+              isActive
+                ? "text-purple-500 font-extrabold btn btn-ghost underline"
+                : isHomePage
+                ? "text-white"
+                : "text-gray-700"
+            }`
+          }
+        >
+          Account
+        </NavLink>
+      </li>
     </>
   );
 
