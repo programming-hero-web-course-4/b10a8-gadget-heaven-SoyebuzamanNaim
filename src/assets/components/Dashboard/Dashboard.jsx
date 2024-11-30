@@ -5,6 +5,7 @@ const Dashboard = () => {
 
   const isCart = location.pathname === "/dashboard/cart";
   const isWishlist = location.pathname === "/dashboard/wishlist";
+  const isDashboard = location.pathname === "/dashboard";
 
   return (
     <div>
@@ -21,7 +22,7 @@ const Dashboard = () => {
             <NavLink
               to="/dashboard/cart"
               className={`btn rounded-3xl font-bold ${
-                isCart
+                isDashboard||isCart
                   ? "bg-white text-purple-500"
                   : "bg-purple-500 text-white hover:bg-purple-600"
               }`}

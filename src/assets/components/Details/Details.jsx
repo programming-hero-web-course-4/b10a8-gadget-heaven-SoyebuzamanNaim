@@ -33,17 +33,15 @@ const Details = () => {
     }
   };
 
-  const handleAddToWishlist = () => {
-    const isProductInWishlist = wishlist.some(
-      (item) => item.product_id === product.product_id
-    );
+  const isProductInWishlist = wishlist.some(
+    (item) => item.product_id === product.product_id
+  );
 
-    if (isProductInWishlist) {
-      alert(`${product.product_title} is already in your wishlist!`);
-    } else {
+  const handleAddToWishlist = () => {
+    if (!isProductInWishlist) {
       addToWishlist(product);
       alert(`${product.product_title} has been added to your wishlist!`);
-    }
+    } 
   };
 
   return (
@@ -110,11 +108,20 @@ const Details = () => {
                 >
                   Add to Cart <CiShoppingCart />
                 </button>
+
+                
                 <button
                   onClick={handleAddToWishlist}
-                  className="p-3 rounded-3xl border border-purple-600 text-purple-600 hover:bg-purple-100 flex items-center gap-2"
+                  disabled={isProductInWishlist}
+                  className={`p-3 rounded-3xl border border-purple-600 flex items-center gap-2 
+                  ${
+                    isProductInWishlist
+                      ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                      : "text-purple-600 hover:bg-purple-100"
+                  }`}
                 >
-                  <CiHeart /> 
+                  {isProductInWishlist ? "Added in Wishlist" : "Add to Wishlist"}{" "}
+                  <CiHeart />
                 </button>
               </div>
             </div>

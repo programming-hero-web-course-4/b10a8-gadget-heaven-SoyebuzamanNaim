@@ -28,20 +28,21 @@ const Wishlist = () => {
                     alt={item.product_title}
                     className="w-20 rounded-lg"
                   />
-                  <div>
+                  <div className=" space-y-1">
                     <h1 className="text-lg font-bold">{item.product_title}</h1>
-                    <p className="text-sm text-gray-600">{item.description}</p>
-                    <p className="text-purple-500 font-bold">${item.price}</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-2">
-                  <button
+                    <p className="text-sm text-gray-600"><span className="font-bold">Description: </span>{item.description}</p>
+                    <p className=" font-bold">Price: ${item.price}</p>
+                    <button
                     onClick={() => moveToCart(item)}
                     className="px-4 py-2 bg-purple-500 text-white rounded-3xl font-bold hover:bg-purple-600"
                   >
                     Add to Cart
                   </button>
+                  </div>
+                </div>
+
+                <div >
+                  
 
                   <button
                     onClick={() => removeFromWishlist(item.product_id)}
