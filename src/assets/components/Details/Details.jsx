@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useGadgets } from "../../contexts/GadgetProvider";
+import { useGadgets } from "../../contexts/GadgetProvider"; 
 import ErrorPage from "../ErrorPage/ErrorPage";
-import { CiShoppingCart } from "react-icons/ci";
-import { CiHeart } from "react-icons/ci";
-import Rating from "react-rating";
-import { CiStar } from "react-icons/ci";
+import { CiShoppingCart, CiHeart, CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
+import Rating from "react-rating";
 
 const Details = () => {
   const { id } = useParams();
-  const { gadgets } = useGadgets();
+  const { gadgets, cart, addToCart } = useGadgets(); 
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -18,9 +16,22 @@ const Details = () => {
     setProduct(foundProduct);
   }, [id, gadgets]);
 
+
   if (!product) {
-    return <ErrorPage></ErrorPage>;
+    return <ErrorPage />;
   }
+
+  const handleAddToCart = () => {
+   
+    const isProductInCart = cart.some((item) => item.product_id === product.product_id);
+
+    if (isProductInCart) {
+      alert(`${product.product_title} is already in your cart!`);
+    } else {
+      addToCart(product);
+      alert(`${product.product_title} has been added to your cart!`);
+    }
+  };
 
   return (
     <>
@@ -29,7 +40,7 @@ const Details = () => {
           <h1 className="text-white container mx-auto text-3xl font-bold pt-8 pb-3">
             Product Details
           </h1>
-          <p className="text-lg text-white opacity-80 mb-8 text-balance container mx-auto">
+          <p className="text-lg text-white opacity-80 mb-8 container mx-auto">
             Discover the perfect blend of quality, design, and performance with
             this {product.product_title}, offering exceptional value at an
             unbeatable price.
@@ -72,26 +83,21 @@ const Details = () => {
                 <Rating
                   initialRating={product.rating}
                   readonly
-                  emptySymbol={
-                    <span className="text-gray-400 text-2xl">
-                      <CiStar />
-                    </span>
-                  }
-                  fullSymbol={
-                    <span className="text-yellow-500 text-2xl">
-                      <FaStar />
-                    </span>
-                  }
+                  emptySymbol={<CiStar className="text-gray-400 text-2xl" />}
+                  fullSymbol={<FaStar className="text-yellow-500 text-2xl" />}
                 />
                 <span className="ml-2 text-gray-600 text-lg">
                   {product.rating.toFixed(1)}
                 </span>
               </div>
               <div className="mt-6 flex gap-4">
-                <button className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 flex items-center gap-2">
+                <button
+                  onClick={handleAddToCart}
+                  className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 flex items-center gap-2"
+                >
                   Add to Cart <CiShoppingCart />
                 </button>
-                <button className="p-3 rounded-full border border-purple-600 text-purple-600  hover:bg-purple-100">
+                <button className="p-3 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">
                   <CiHeart />
                 </button>
               </div>

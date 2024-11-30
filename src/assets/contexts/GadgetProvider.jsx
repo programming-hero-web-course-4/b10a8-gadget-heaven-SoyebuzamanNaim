@@ -2,12 +2,11 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const GadgetContext = createContext();
 
-export const useGadgets = () => {
-  return useContext(GadgetContext);
-};
+export const useGadgets = () => useContext(GadgetContext);
 
 export const GadgetProvider = ({ children }) => {
   const [gadgets, setGadgets] = useState([]);
+  const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -29,8 +28,18 @@ export const GadgetProvider = ({ children }) => {
       });
   }, []);
 
+  const addToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
+
+  const removeFromCart = (productId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.product_id !== productId));
+  };
+
+  const clearCart = () => setCart([]);
+
   return (
-    <GadgetContext.Provider value={{ gadgets, loading, error }}>
+    <GadgetContext.Provider value={{ gadgets, cart, loading, error, addToCart, removeFromCart, clearCart }}>
       {children}
     </GadgetContext.Provider>
   );
