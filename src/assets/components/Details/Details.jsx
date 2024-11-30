@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useGadgets } from "../../contexts/GadgetProvider"; 
+import { useGadgets } from "../../contexts/GadgetProvider";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import { CiShoppingCart, CiHeart, CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
@@ -8,7 +8,7 @@ import Rating from "react-rating";
 
 const Details = () => {
   const { id } = useParams();
-  const { gadgets, cart, addToCart } = useGadgets(); 
+  const { gadgets, cart, wishlist, addToCart, addToWishlist } = useGadgets();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -16,20 +16,33 @@ const Details = () => {
     setProduct(foundProduct);
   }, [id, gadgets]);
 
-
   if (!product) {
     return <ErrorPage />;
   }
 
   const handleAddToCart = () => {
-   
-    const isProductInCart = cart.some((item) => item.product_id === product.product_id);
+    const isProductInCart = cart.some(
+      (item) => item.product_id === product.product_id
+    );
 
     if (isProductInCart) {
       alert(`${product.product_title} is already in your cart!`);
     } else {
       addToCart(product);
       alert(`${product.product_title} has been added to your cart!`);
+    }
+  };
+
+  const handleAddToWishlist = () => {
+    const isProductInWishlist = wishlist.some(
+      (item) => item.product_id === product.product_id
+    );
+
+    if (isProductInWishlist) {
+      alert(`${product.product_title} is already in your wishlist!`);
+    } else {
+      addToWishlist(product);
+      alert(`${product.product_title} has been added to your wishlist!`);
     }
   };
 
@@ -93,12 +106,15 @@ const Details = () => {
               <div className="mt-6 flex gap-4">
                 <button
                   onClick={handleAddToCart}
-                  className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 flex items-center gap-2"
+                  className="px-6 py-2 bg-purple-600 text-white rounded-3xl hover:bg-purple-700 flex items-center gap-2"
                 >
                   Add to Cart <CiShoppingCart />
                 </button>
-                <button className="p-3 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">
-                  <CiHeart />
+                <button
+                  onClick={handleAddToWishlist}
+                  className="p-3 rounded-3xl border border-purple-600 text-purple-600 hover:bg-purple-100 flex items-center gap-2"
+                >
+                  <CiHeart /> 
                 </button>
               </div>
             </div>
