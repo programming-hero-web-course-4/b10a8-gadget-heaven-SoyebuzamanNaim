@@ -4,6 +4,7 @@ import { TbSortAscending } from "react-icons/tb";
 import { TiDeleteOutline } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 import success_img from "../../images/Group.png";
+import { Helmet } from "react-helmet-async";
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useGadgets();
@@ -35,7 +36,12 @@ const Cart = () => {
     navigate("/"); 
   };
 
-  return (
+  return (<>
+  <Helmet>
+    <title>
+      Gadget Heaven - Cart 
+    </title>
+  </Helmet>
     <div>
       <div className="flex items-center justify-between py-10 container mx-auto px-4">
         <h2 className="font-bold text-xl mb-3">Cart</h2>
@@ -114,7 +120,7 @@ const Cart = () => {
           </div>
         </div>
       )}
-    </div>
+    </div></>
   );
 };
 

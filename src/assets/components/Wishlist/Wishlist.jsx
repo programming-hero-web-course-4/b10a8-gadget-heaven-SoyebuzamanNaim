@@ -1,11 +1,16 @@
+import { Helmet } from "react-helmet-async";
 import { useGadgets } from "../../contexts/GadgetProvider";
 import { TiDeleteOutline } from "react-icons/ti";
 
 const Wishlist = () => {
   const { wishlist, removeFromWishlist, moveToCart } = useGadgets();
 
-  return (
+  return (<>
+    <Helmet>
+        <title>Wishlist - Gadget Heaven</title>
+      </Helmet>
     <div className="">
+      
       <div className="flex items-center justify-between py-10 container mx-auto px-4">
         <h2 className="font-bold text-xl mb-3">Wishlist</h2>
       </div>
@@ -56,7 +61,7 @@ const Wishlist = () => {
           </div>
         )}
       </div>
-    </div>
+    </div></>
   );
 };
 

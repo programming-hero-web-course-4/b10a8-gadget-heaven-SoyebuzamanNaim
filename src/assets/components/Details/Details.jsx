@@ -6,6 +6,7 @@ import { CiShoppingCart, CiHeart, CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
   const { id } = useParams();
@@ -41,12 +42,17 @@ const Details = () => {
   const handleAddToWishlist = () => {
     if (!isProductInWishlist) {
       addToWishlist(product);
-      toast.success(`${product.product_title} has been added to your wishlist!`);
-    } 
+      toast.success(
+        `${product.product_title} has been added to your wishlist!`
+      );
+    }
   };
 
   return (
     <>
+      <Helmet>
+        <title>{product.product_title} - Gadget Heaven</title>
+      </Helmet>
       <div className="relative mb-28 bg-gradient-to-b from-purple-600 to-gray-200 text-center pb-44 rounded-b-2xl">
         <div>
           <h1 className="text-white container mx-auto text-3xl font-bold pt-8 pb-3">
@@ -110,7 +116,6 @@ const Details = () => {
                   Add to Cart <CiShoppingCart />
                 </button>
 
-                
                 <button
                   onClick={handleAddToWishlist}
                   disabled={isProductInWishlist}
@@ -121,7 +126,9 @@ const Details = () => {
                       : "text-purple-600 hover:bg-purple-100"
                   }`}
                 >
-                  {isProductInWishlist ? "Added in Wishlist" : "Add to Wishlist"}{" "}
+                  {isProductInWishlist
+                    ? "Added in Wishlist"
+                    : "Add to Wishlist"}{" "}
                   <CiHeart />
                 </button>
               </div>

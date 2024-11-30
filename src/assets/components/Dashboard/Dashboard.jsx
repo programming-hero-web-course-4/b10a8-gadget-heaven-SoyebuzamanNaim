@@ -1,3 +1,4 @@
+
 import { Outlet, NavLink, useLocation } from "react-router-dom";
 
 const Dashboard = () => {
@@ -8,6 +9,8 @@ const Dashboard = () => {
   const isDashboard = location.pathname === "/dashboard";
 
   return (
+    <>
+    
     <div>
       <div className="bg-purple-500 py-8">
         <div className="container mx-auto flex-col justify-center items-center">
@@ -45,7 +48,7 @@ const Dashboard = () => {
       </div>
 
       <Outlet />
-    </div>
+    </div></>
   );
 };
 

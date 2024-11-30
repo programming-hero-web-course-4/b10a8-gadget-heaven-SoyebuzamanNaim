@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useGadgets } from "../../contexts/GadgetProvider";
+import { Helmet } from "react-helmet-async";
 
 const Statistics = () => {
   const { gadgets } = useGadgets();
@@ -19,6 +20,9 @@ const Statistics = () => {
 
   return (
     <div className="container mx-auto py-10">
+      <Helmet>
+        <title>Statistics - Gadget Heaven</title>
+      </Helmet>
       <h2 className="text-3xl font-bold text-center mb-8">
         Product Statistics
       </h2>
