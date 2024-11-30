@@ -5,6 +5,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import { CiShoppingCart, CiHeart, CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import { toast } from "react-toastify";
 
 const Details = () => {
   const { id } = useParams();
@@ -26,10 +27,10 @@ const Details = () => {
     );
 
     if (isProductInCart) {
-      alert(`${product.product_title} is already in your cart!`);
+      toast.warning(`${product.product_title} is already in your cart!`);
     } else {
       addToCart(product);
-      alert(`${product.product_title} has been added to your cart!`);
+      toast.success(`${product.product_title} has been added to your cart!`);
     }
   };
 
@@ -40,7 +41,7 @@ const Details = () => {
   const handleAddToWishlist = () => {
     if (!isProductInWishlist) {
       addToWishlist(product);
-      alert(`${product.product_title} has been added to your wishlist!`);
+      toast.success(`${product.product_title} has been added to your wishlist!`);
     } 
   };
 

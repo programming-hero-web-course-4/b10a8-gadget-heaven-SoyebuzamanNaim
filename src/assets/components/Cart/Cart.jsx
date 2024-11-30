@@ -82,6 +82,7 @@ const Cart = () => {
                 <button
                   onClick={() => removeFromCart(item.product_id)}
                   className="text-3xl px-4 py-2 text-red-500 rounded-full"
+                  
                 >
                   <TiDeleteOutline />
                 </button>

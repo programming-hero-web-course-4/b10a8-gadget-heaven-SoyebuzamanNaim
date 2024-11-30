@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const GadgetContext = createContext();
 
@@ -37,6 +38,7 @@ export const GadgetProvider = ({ children }) => {
     setCart((prevCart) =>
       prevCart.filter((item) => item.product_id !== productId)
     );
+    toast.warning(`Product removed from cart`);
   };
 
   const clearCart = () => setCart([]);
@@ -51,11 +53,13 @@ export const GadgetProvider = ({ children }) => {
     setWishlist((prevWishlist) =>
       prevWishlist.filter((item) => item.product_id !== productId)
     );
+    toast.warning(`Product removed from Wishlist`);
   };
 
   const moveToCart = (product) => {
     addToCart(product);
     removeFromWishlist(product.product_id);
+    toast.success(`Product moved to Cart successfully`);
   };
 
   return (
