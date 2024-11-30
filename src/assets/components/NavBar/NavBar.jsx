@@ -26,22 +26,6 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
-          to="dashboard"
-          className={({ isActive }) =>
-            `text-lg text-center  ${
-              isActive
-                ? "text-purple-500 font-extrabold btn btn-ghost underline"
-                : isHomePage
-                ? "text-white"
-                : "text-gray-700"
-            }`
-          }
-        >
-          Dashboard
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
           to="statistics"
           className={({ isActive }) =>
             `text-lg text-center  ${
@@ -56,6 +40,23 @@ const NavBar = () => {
           Statistics
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="dashboard"
+          className={({ isActive }) =>
+            `text-lg text-center  ${
+              isActive
+                ? "text-purple-500 font-extrabold btn btn-ghost underline"
+                : isHomePage
+                ? "text-white"
+                : "text-gray-700"
+            }`
+          }
+        >
+          Dashboard
+        </NavLink>
+      </li>
+      
     </>
   );
 
