@@ -13,7 +13,7 @@ import { Helmet } from "react-helmet-async";
 const Statistics = () => {
   const { gadgets } = useGadgets();
 
-  const chartData = gadgets.map((gadget) => ({
+  const chartData = gadgets.map((gadget, index) => ({
     Name: gadget.product_title,
     Price: gadget.price,
   }));

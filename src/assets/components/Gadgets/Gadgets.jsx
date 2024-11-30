@@ -40,8 +40,10 @@ const Gadgets = () => {
 
   return (
     <div>
-      <p className="text-3xl md:text-4xl font-extrabold text-center pb-10 md:pb-20">Explore Cutting-Edge Gadgets</p>
-      <div className="flex gap-6">
+      <p className="text-3xl md:text-4xl font-extrabold text-center pb-10 md:pb-20">
+        Explore Cutting-Edge Gadgets
+      </p>
+      <div className="flex flex-col md:flex-row gap-6">
         <Sidebar
           categories={categories}
           onCategorySelect={handleCategorySelect}
